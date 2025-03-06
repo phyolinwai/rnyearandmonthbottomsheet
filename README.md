@@ -1,5 +1,9 @@
 # React native Year and Month Buttom Sheet
 
+# Screenshot
+
+<img src="https://github.com/phyolinwai/rnyearandmonthbottomsheet/blob/main/screenshots/1.png?raw=true" width="300" height="580"> <img src="https://github.com/phyolinwai/rnyearandmonthbottomsheet/blob/main/screenshots/2.png?raw=true" width="300" height="580">
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
