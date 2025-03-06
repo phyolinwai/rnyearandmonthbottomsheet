@@ -2,7 +2,7 @@
 
 # Screenshot
 
-<img src="https://github.com/phyolinwai/rnyearandmonthbottomsheet/blob/main/screenshots/1.png?raw=true" width="300" height="580"> <img src="https://github.com/phyolinwai/rnyearandmonthbottomsheet/blob/main/screenshots/2.png?raw=true" width="300" height="580">
+<img src="https://github.com/phyolinwai/rnyearandmonthbottomsheet/blob/main/screenshots/1.png?raw=true" width="300"> <img src="https://github.com/phyolinwai/rnyearandmonthbottomsheet/blob/main/screenshots/2.png?raw=true" width="300">
 
 # Getting Started
 
