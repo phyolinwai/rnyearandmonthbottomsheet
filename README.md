@@ -72,6 +72,7 @@ This is one way to run your app — you can also build it directly from Android 
 | :--------------: | :----------------------------------------------------------------------------------------------------------------: |
 |      title       |                                  Modal only: Title text. Can not be set to null.                                   |
 |      isShow      | Boolean indicating if modal should be used. Default: "false". When enabled, the other modal props needs to be used |
-|   limitedYear    |                                            Modal only: Number indicate.                                            |
+|     minYear      |                                            Modal only: Number indicate.                                            |
+|     maxYear      |                                            Modal only: Number indicate.                                            |
 | onSelectedPicker |                                       (year: number, month: number) => void                                        |
 |  onClickCancel   |                                                     () => void                                                     |

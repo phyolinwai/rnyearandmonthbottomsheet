@@ -19,7 +19,8 @@ import {
 interface IYearAndMonthBottomSheetProps {
   title: string;
   isShow: boolean;
-  limitedYear: number;
+  minYear: number;
+  maxYear: number;
   onSelectedPicker: (year: number, month: number) => void;
   onClickCancel: () => void;
 }
@@ -45,23 +46,21 @@ const DATA: MonthItemProps[] = [
 ];
 
 const date = new Date();
-
 const YearAndMonthBottomSheet = (props: IYearAndMonthBottomSheetProps) => {
-  const [currentYear, setCurrentYear] = useState(date.getFullYear());
   const [selectedYear, setSelectedYear] = useState<number>(date.getFullYear());
   const [selectedMonth, setSelectedMonth] = useState<number>(
     date.getMonth() + 1,
   );
 
   const onClickPrev = () => {
-    if (selectedYear <= currentYear) {
+    if (selectedYear <= props.minYear) {
       return;
     }
     setSelectedYear(selectedYear - 1);
   };
 
   const onClickNext = () => {
-    if (selectedYear >= currentYear + props.limitedYear) {
+    if (selectedYear >= props.maxYear) {
       return;
     }
     setSelectedYear(selectedYear + 1);
@@ -98,6 +97,10 @@ const YearAndMonthBottomSheet = (props: IYearAndMonthBottomSheetProps) => {
     </TouchableOpacity>
   );
 
+  if (props.minYear > props.maxYear) {
+    console.error('min year should be less then max year');
+  }
+
   return (
     <Modal animationType="slide" transparent={true} visible={props.isShow}>
       <View style={styles.backdrop}>
@@ -110,11 +113,11 @@ const YearAndMonthBottomSheet = (props: IYearAndMonthBottomSheetProps) => {
             {/* pre button */}
             <TouchableOpacity
               onPress={() => onClickPrev()}
-              disabled={selectedYear <= currentYear}>
+              disabled={selectedYear <= props.minYear}>
               <Image
                 source={require('../../assets/chevron-back-outline.png')}
                 style={{width: 24, height: 24}}
-                tintColor={selectedYear <= currentYear ? 'gray' : 'black'}
+                tintColor={selectedYear <= props.minYear ? 'gray' : 'black'}
               />
             </TouchableOpacity>
 
@@ -126,15 +129,11 @@ const YearAndMonthBottomSheet = (props: IYearAndMonthBottomSheetProps) => {
             {/* next button */}
             <TouchableOpacity
               onPress={() => onClickNext()}
-              disabled={selectedYear >= currentYear + props.limitedYear}>
+              disabled={selectedYear >= props.maxYear}>
               <Image
                 source={require('../../assets/chevron-forward-outline.png')}
                 style={{width: 24, height: 24}}
-                tintColor={
-                  selectedYear >= currentYear + props.limitedYear
-                    ? 'gray'
-                    : 'black'
-                }
+                tintColor={selectedYear >= props.maxYear ? 'gray' : 'black'}
               />
             </TouchableOpacity>
           </View>

@@ -36,7 +36,8 @@ function App(): React.JSX.Element {
         <YearAndMonthBottomSheet
           title="Year and Month Picker"
           isShow={isShow}
-          limitedYear={2}
+          minYear={2020}
+          maxYear={2027}
           onClickCancel={() => setShow(!isShow)}
           onSelectedPicker={(year: number, month: number) => {
             setSelectedPickerData({year, month});
